@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Build outputs
+dist/
+build/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Cucumber JSON reports (si usas)
+cucumber-report.json
+
+# Others
+.vscode/
+.idea/
+*.swp
