@@ -49,11 +49,20 @@ Then('mostrar la lista de partidos programados', function () {
 Given('que no hay equipos inscritos en el torneo', async function () {
   // Crear torneo vacío
   const torneo = await Tournament.create({
-    name: "Torneo sin equipos",
-    category: "Sub-15",
-    format: "liga",
-    rules: "Sin reglas",
-  });
+  name: "Torneo de prueba",
+  category: "Libre",
+  rules: "Reglas estándar",
+  format: "eliminacionDirecta",
+  maxPlayersPerTeam: 10,
+  minPlayersPerTeam: 5,
+  maxTeams: 8,
+  startDate: new Date(),
+  endDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+  registrationStart: new Date(),
+  registrationTeamEnd: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+  registrationPlayerEnd: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+  sport: "6659b6b88568c9b2fd89b700"
+});
   tournamentId = torneo._id;
 });
 

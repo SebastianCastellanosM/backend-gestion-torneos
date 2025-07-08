@@ -16,7 +16,7 @@ When('ingresa su nombre, correo electrónico, fecha de nacimiento y contraseña 
     .send({
       firstName: 'Juan',
       lastName: 'Pérez',
-      email: 'nuevo@correo.com',
+      email: 'nuevo@correo.edu.co',
       password: '12345678',
     });
 });
@@ -46,7 +46,7 @@ When('otro visitante intenta registrarse con ese mismo correo', async function (
     .send({
       firstName: 'Otro',
       lastName: 'Visitante',
-      email: 'usuario@ejemplo.com',
+      email: 'usuario@ejemplo.edu.co',
       password: 'otro1234',
     });
 });

@@ -71,7 +71,7 @@ const tournamentSchema = new mongoose.Schema(
     },
     format: {
       type: String,
-      enum: ["group-stage", "elimination"],
+      enum: ['eliminacionDirecta', 'liga', 'grupos'],
       required: true,
     },
     groupsStageSettings: {
