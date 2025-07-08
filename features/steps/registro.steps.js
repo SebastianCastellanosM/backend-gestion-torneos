@@ -7,10 +7,10 @@ import User from '../../models/userModel.js';
 let response;
 
 Given('que un visitante accede a la página de registro', function () {
-  // Simula acceso (no necesario para backend)
+  // Simulación de acceso al backend (no requiere acción real)
 });
 
-When('ingresa su nombre, correo electrónico, fecha de nacimiento y contraseña válidos', async function () {
+When('ingresa su nombre, correo electrónico, fecha de nacimiento y contraseña válidos y presiona el botón de registro', async function () {
   response = await request(app)
     .post('/api/users/register')
     .send({
@@ -19,12 +19,6 @@ When('ingresa su nombre, correo electrónico, fecha de nacimiento y contraseña 
       email: 'nuevo@correo.com',
       password: '12345678',
     });
-});
-
-When("presiona el botón de registro", async function () {
-  response = await request(app)
-    .post("/api/users/register")
-    .send(this.newUser); // this.newUser debe tener los datos correctos
 });
 
 Then('el sistema debe crear su cuenta', function () {
@@ -36,12 +30,12 @@ Then('mostrar un mensaje de éxito', function () {
 });
 
 Given('ya existe un usuario con el correo {string}', async function (email) {
-  await User.deleteOne({ email }); // Limpieza previa por si ya existía
+  await User.deleteOne({ email }); // Elimina si ya existe
   await User.create({
     firstName: 'Existente',
     lastName: 'Usuario',
     email,
-    password: 'hashedpassword', // En pruebas puedes omitir hash real
+    password: 'hashedpassword', // Para pruebas puedes usar texto plano si no se valida
     role: 'captain',
   });
 });

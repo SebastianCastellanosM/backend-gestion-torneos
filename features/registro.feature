@@ -2,8 +2,7 @@ Feature: Registro de usuarios
 
   Scenario: Registro exitoso
     Given que un visitante accede a la página de registro
-    When ingresa su nombre, correo electrónico, fecha de nacimiento y contraseña válidos
-    And presiona el botón de registro
+    When ingresa su nombre, correo electrónico, fecha de nacimiento y contraseña válidos y presiona el botón de registro
     Then el sistema debe crear su cuenta
     And mostrar un mensaje de éxito
 
